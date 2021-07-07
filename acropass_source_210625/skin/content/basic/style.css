@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+/* SHOP 메인 레이아웃 */
+
+.contents_title_wrap {width:1400px;padding:0 100px;margin:0 auto;height:100px;line-height:100px;margin-top:100px;text-align:left;}
+.contents_main_title {text-align: left; font-size:30px; color:#000; font-weight: bold; display: inline-block;}
+.contents_sub_title {font-size:28px; color:#000; font-weight: 300; margin-left:20px; display: inline-block;}
+
+#con_wrap {width:1400px;margin:0 auto;padding:0 100px;min-width: 1400px;}
+.con_default  {font-size:15px;color:#000;letter-spacing: 1.1;line-height: 20px;}
+
+
+
+/* 내용관리 */
+#ctt {margin:10px 0;padding:20px;background:#fff}
+.ctt_admin {text-align:right}
+#ctt header h1 {position:absolute;font-size:0;line-height:0;overflow:hidden}
+#ctt_con {padding:10px 0;line-height:1.6em}
+#ctt_con img{max-width:100%;height:auto}
+.ctt_img {text-align:center}

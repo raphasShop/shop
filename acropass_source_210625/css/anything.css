@@ -1,0 +1,1134 @@
+@charset "utf-8";
+/********************************************************
+구글서버에서 나눔폰트불러오기 (한국서버가 않될경우 이링크를 활성화할것
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+한국서버정보 https://www.xpressengine.com/forum/22768426 
+********************************************************/
+@import url(//cdn.jsdelivr.net/font-nanum/1.0/nanumgothic/nanumgothic.css); /* 나눔고딕 : 한국서버 빠름*/
+@import url(//cdn.jsdelivr.net/font-nanum/1.0/nanumbarungothic/nanumbarungothic.css); /* 나눔바른고딕 : 한국서버 빠름*/
+/* @import url(//cdn.jsdelivr.net/font-nanum/1.0/nanumgothiccoding/nanumgothiccoding.css); 나눔고딕코딩 : 한국서버 빠름*/
+/* @import url(//cdn.jsdelivr.net/font-nanum/1.0/nanummyeongjo/nanummyeongjo.css);  나눔명조 : 한국서버 빠름*/
+/* @import url(//cdn.jsdelivr.net/font-nanum/1.0/nanumpenscript/nanumpenscript.css);  나눔펜 손글씨 : 한국서버 빠름*/
+/* @import url(//cdn.jsdelivr.net/font-nanum/1.0/nanumbrushscript/nanumbrushscript.css);  나눔브러쉬 손글씨 : 한국서버 빠름*/
+
+/*********************************************************
+▦▦ 한국서버의 나눔체웹 폰트불러오기로 폰트설정할때 ▦▦ 
+---------------------------------------------------------
+font-family: 'Nanum Gothic', sans-serif; (나눔고딕)
+font-family: 'Nanum Gothic Coding', sans-serif; (나눔고딕코딩)
+font-family: 'Nanum Barun Gothic', sans-serif; (나눔바른고딕)
+font-family: 'Nanum Myeongjo', serif; (나눔명조)
+font-family: 'Nanum Pen Script', cursive; (나눔펜 손글씨)
+font-family: 'Nanum Brush Script', cursive; (나눔브러쉬 손글씨)
+---------------------------------------------------------
+로 지정해주시면 됩니다
+
+▦▦ 내용이 박스밖으로 나가지않게 하기 ▦▦
+---------------------------------------------------------
+(1) white-space:nowrap; 
+넓이를 지정하였더라도 자동으로 줄바꿈되지 않게 강제로 개행을 막아줌.
+(2) word-break:break-all;
+문장을 띄어쓰기 할때 쓰인 공백기준이 아닌 문자단위로 끊어주는 속성 
+(3) text-overflow:ellipsis;
+텍스트가 넘칠때, 말줄임표( ... )가 나오게 하는 속성,
+적용조건 white-space:nowrap; 과 반드시 함께 사용
+---------------------------------------------------------
+
+▦▦ 원을 만들때는 radius값을 %가아닌 px로 표시할것(모바일에도 정상적용) ▦▦
+(예)높이가 100px일경우 원으로 만들때 적용값
+---------------------------------------------------------
+-moz-border-radius: 50px;
+-webkit-border-radius: 50px;
+border-radius: 50px;
+---------------------------------------------------------
+
+▦▦ CSS로 배경 그라데이션 주기
+---------------------------------------------------------
+(1) 색상지정하면 자동으로 만들어서 소스코드 만들어주는 사이트
+http://www.colorzilla.com/gradient-editor/
+
+(2) 단순그라데이션 CSS 샘플
+---------------------------------------------------------
+
+▦▦ 텍스트박스(INPUT) 특정글자만 입력되게 제한 가능
+---------------------------------------------------------
+숫자만입력가능 : onKeyup="this.value=this.value.replace(/[^0-9]/g,'')"
+영문만입력가능 : onKeyup="this.value=this.value.replace(/[^a-zA-z]/g,'')"
+한글만입력가능 : onKeyup="this.value=this.value.replace(/[^ㄱ-ㅎ가-힇]/g,'')"
+---------------------------------------------------------
+
+▦▦ padding 값입력시 크롬에서는 사이즈가 늘어나는 오류가 나므로, 아래 코드를 추가함!!!!
+---------------------------------------------------------
+-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;
+---------------------------------------------------------
+
+▦▦ 해상도별로 사이즈를 달리하는 미디어쿼리
+---------------------------------------------------------
+@media all and : 모든 미디어타입.따로 미디어를 지정하지 않으면 all이 기본값
+@media screen and : 가장 많이 사용하는 속성값으로 컴퓨터, 모바일, 태블릿 등 현재 미디어쿼리가 실행된 모니터
+@media print and : 프린트 기기.​ 인쇄기능을 추가해서 인쇄를 했는데 인쇄가 깨질시 print 속성을 이용해서 맞춰줌
+그 외에 speech, aural, braille, embossedm handheld, projection, tty, tv 등이 있지만 거의 사용하지 않음
+---------------------------------------------------------
+● and 연산자 : 여러 미디어 특징들을 하나로 결합
+● , (or)연산자: 쉼표로 분리된 각 목록은 각각 개별 미디어 쿼리임
+● not 연산자 : 전체 미디어 쿼리를 부정하기 위해 사용함
+● only 연산자 : 미디어 쿼리를 지원하지 않는 브라우저가 주어진 스타일을 적용하는 것을 방지
+---------------------------------------------------------
+max-width:480px (모바일 사이즈)
+max-width:511px (모바일~테블릿 사이즈)
+max-width:767px (테블릿 사이즈)
+max-width:991px (테블릿~데스크탑 사이즈)
+max-width:1200px (데스크탑 사이즈)
+---------------------------------------------------------
+@media all and (max-width:1200px) { 모니터해상도 가로넓이가 1200픽셀이하면 이괄호안의 CSS를 적용한다
+}
+@media all and (min-width:320px) and (max-width:1200px) { 모니터해상도 가로넓이가 최소 320픽셀이상이고 최대 1200픽셀사이에서만 이괄호안의 CSS를 적용한다
+}
+@media all and (min-width:320px) { 모니터해상도 가로넓이가 320픽셀이상이면 이괄호안의 CSS를 적용한다
+}
+---------------------------------------------------------
+********************************************************/
+
+
+/**************************************************************************************
+
+■ {쇼핑몰 상품목록} ▦ Sticker ▦: 상품이미지위에 표시되는 스티커형태의 상품정보표시
+
+**************************************************************************************/
+
+/* 품절시 이미지상단에 어둡게 커튼효과 2016-4-27 */
+.sticker-soldout { 
+	z-index:3;
+	position: absolute; 
+	width: 100%;
+	height: 100%;
+	background: #111111;
+	font-size: 30px;
+	font-family:'Malgun Gothic',"맑은 고딕",AppleGothic,Dotum,"돋움", sans-serif; 
+	color:#ffffff;
+	text-align: center;
+	padding-top: 100px;
+	top: 0px;
+	right:0px;
+	filter:alpha(opacity=80);
+	opacity:0.8;
+	-moz-opacity:0.8;
+}
+
+/* (TOP-좌측) 한정판매(핫딜)마크 2016-10-13추가 */
+.sticker-limited { 
+	z-index:3;
+	position: absolute;
+	width: 60px;
+	height: 40px;
+	background: rgb(255, 209, 35);
+	font-size: 20px;
+	font-family:'Malgun Gothic',"맑은 고딕",AppleGothic,Dotum,"돋움", sans-serif;
+	line-height:40px; 
+	color:#000000;
+	text-align: center;
+	display: inline-block;
+    vertical-align: middle;
+	text-align:center;
+    margin:0 auto;
+	top: 20px;
+	left:5px;
+}
+.sticker-limited:before { 
+	content: "";
+	position: absolute;
+	top: -10px;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-left: 30px solid transparent;
+	border-right: 30px solid transparent;
+	border-bottom: 15px solid rgb(255, 209, 35);
+}
+.sticker-limited:after {
+	content: "";
+	position: absolute;
+	bottom: -10px;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-left: 30px solid transparent;
+	border-right: 30px solid transparent;
+	border-top: 15px solid rgb(255, 209, 35);
+}
+/* 한정판매 기간표시 */
+.limited-date-tack { 
+	z-index:2;
+	position: absolute; 
+	width: 100%;
+	height: 40px;
+	padding-right:15px;
+	text-align:right;
+	background: #333;
+	font-size: 11px;
+	font-family:'Malgun Gothic',"맑은 고딕",AppleGothic,Dotum,"돋움", sans-serif;
+	line-height:44px;
+	color:rgb(255, 209, 35);
+	display: inline-block;
+    vertical-align: middle;
+	top: 0px;
+	left:0px;
+	word-break:break-all;
+	filter:alpha(opacity=80);
+	opacity:0.8;
+	-moz-opacity:0.8;
+}
+/* } 한정판매끝*/
+
+
+/* 라벨그룹 (BOTTOM-LEFT) */
+.sticker-group-bottom { 
+	z-index:2;
+	position: absolute;
+	text-align: center;
+	display: table;
+	bottom:-15px;
+	left:0px;
+	margin:0 auto;
+	background: transparent;
+	white-space:nowrap;
+}
+/* (1)쿠폰표시 - 기존에 우측상단에 띠형태를 원형태로 변경하여 모두 적용함 2016-4-27 */
+.sticker-coupon { 
+	z-index:2;
+	position: relative;
+	/*
+	float: left;
+	*/
+	width: 50px;
+	height: 40px;
+	background: #FA7116;
+	padding-top:4px;
+	font-size: 12px;
+	font-family:'Malgun Gothic',"맑은 고딕",AppleGothic,Dotum,"돋움", sans-serif;
+	line-height:1.2em;
+	color:#000;
+	text-align: center;
+	border: solid 1px rgb(255, 102, 0);
+	display: table-cell;
+	margin:0px;
+	overflow: visible;
+	filter:alpha(opacity=90);
+	opacity:0.9;
+	-moz-opacity:0.9;
+}
+/* (2)할인표시 - 기존에 우측상단에 띠형태를 원형태로 변경하여 모두 적용함 2016-4-27 */
+.sticker-discount { 
+	z-index:2;
+	position: relative;
+	width: 40px;
+	height: 40px;
+	background: #FFD148;
+	padding-top:13px;
+	font-size: 16px;
+	font-family:'Malgun Gothic',"맑은 고딕",AppleGothic,Dotum,"돋움", sans-serif;
+	line-height:1em; 
+	letter-spacing:-1px;
+	color:#CD282B;
+	text-align: center;
+	display: table-cell;
+    margin:0px;
+	overflow: visible;
+	filter:alpha(opacity=90);
+	opacity:0.9;
+	-moz-opacity:0.9;
+}
+/* (3) 배송비쿠폰 표시 */
+.sticker-deliverycoupon { 
+	z-index:2;
+	position: relative;
+	width: 50px;
+	height: 40px;
+	background: rgb(255, 209, 35);
+	padding-top:5px;
+	font-size: 11px;
+	font-family: '돋움', tahoma, sans-serif;
+	line-height:1.2em;
+	letter-spacing:-1px;
+	color:#333;
+	text-align: center;
+	border: 1px solid rgb(247, 197, 31); 
+	display: table-cell;
+    margin:0px;
+	overflow: visible;
+	filter:alpha(opacity=90);
+	opacity:0.9;
+	-moz-opacity:0.9;
+}
+/* (4) 무료배송&배송조건 표시 */
+.sticker-delivery { 
+	z-index:2;
+	position: relative;
+	width: 50px;
+	height: 40px;
+	background: rgb(100, 195, 245);
+	padding-top:9px;
+	font-size: 8pt;
+	font-family: '돋움', tahoma;
+	line-height:1.2em;
+	letter-spacing:-1px;
+	color:#fff;
+	text-align: center;
+	border: 1px solid rgb(60, 180, 245); 
+	display: table-cell;
+    margin:0px;
+	overflow: visible;
+	filter:alpha(opacity=90);
+	opacity:0.9;
+	-moz-opacity:0.9;
+}
+
+
+/* 할인표시 - 기존에 우측상단에 띠형태를 원형태로 변경하여 모두 적용함 2016-4-27 */
+.sticker-xxx { 
+	z-index:2;
+	position: relative; 
+	width: 60px;
+	height: 60px;
+	border-radius:50%;
+	background: #FA7116;
+	padding-top:14px;
+	font-size: 14px;
+	font-family:'Malgun Gothic',"맑은 고딕",AppleGothic,Dotum,"돋움", sans-serif;
+	line-height:1em; 
+	color:#fff;
+	text-align: center;
+	display: inline-block; 
+
+	filter:alpha(opacity=90);
+	opacity:0.9;
+	-moz-opacity:0.9;
+}
+
+/* NEW, HOT 등 사진위에 버튼표시 - 기존에 우측상단에 띠형태를 원형태로 변경하여 모두 적용함 2016-4-27 */
+.sticker-modum { 
+	z-index:2;
+	position: absolute; 
+	height: 25px;
+	background: none;
+	color:#CD282B;
+	text-align: right;
+	display: inline-block;
+    vertical-align: middle;
+	bottom:0px;
+	right:0px;
+}
+
+.sticker-cap_old { 
+	z-index:2; 
+	font-family: tahoma; 
+	bottom: -11px; 
+	letter-spacing:1px; 
+	width: 140px; 
+	padding: 20px 0px 3px; 
+	right: -60px; 
+	font-size: 11px; 
+	position: absolute; 
+	text-align: center; 
+	font-weight:normal; 
+	transform: rotate(45deg); 
+	-o-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg); 
+}
+
+/* 원안에 글자표시하기 ----------------------------------------- */
+.round-xs { 
+	z-index:2;
+	width: 20px;
+	height: 20px;
+	border-radius:50%;
+	background: #FF6600;
+	font-size: 12px;
+	font-family:'Malgun Gothic',"맑은 고딕",AppleGothic,Dotum,"돋움", sans-serif;
+	line-height: 20px; 
+	color:#FFFFFF;
+	text-align: center;
+	display: inline-block;
+}
+.round-sm { 
+	z-index:2;
+	width: 24px;
+	height: 24px;
+	border-radius:50%;
+	background: rgb(250, 157, 35);
+	font-size: 12px;
+	font-family:'Malgun Gothic',"맑은 고딕",AppleGothic,Dotum,"돋움", sans-serif;
+	line-height:24px; 
+	color:#FFFFFF;
+	text-align: center;
+	display: inline-block;
+}
+.round-cnt-xs { 
+	z-index:2;
+	width: 20px;
+	height: 20px;
+	border-radius:50%;
+	background: #FF6600;
+	font-size: 11px;
+	font-family:'Malgun Gothic',"맑은 고딕",AppleGothic,Dotum,"돋움", sans-serif;
+	line-height: 20px; 
+	color:#FFFFFF;
+	text-align: center;
+	display: inline-block;
+	position:relative;
+	left:-5px;
+}
+.round-cnt-xxs { 
+	z-index:2;
+	width: 16px;
+	height: 16px;
+	border-radius:50%;
+	background: #FF6600;
+	font-size: 10px;
+	font-family:'Malgun Gothic',"맑은 고딕",AppleGothic,Dotum,"돋움", sans-serif;
+	line-height: 16px; 
+	color:#FFFFFF;
+	text-align: center;
+	display: inline-block;
+	position:relative;
+	left:-5px;
+}
+
+/* Icons ------------------------------------------------------ */
+.rank-icon { 
+	display:inline-block; 
+	padding:0px 3px; 
+	font-size:11px; 
+	letter-spacing:-1px; 
+	line-height:16px; 
+	font-weight:normal; 
+	margin-right:0px; 
+	min-width:18px; 
+	text-align:center;
+}
+.tack-icon { 
+	display:inline-block; 
+	padding:4px 6px 2px; 
+	font-family:dotum; 
+	font-size:11px; 
+	letter-spacing:-1px; 
+	line-height:11px;
+	font-weight:normal; 
+}
+.social-icon a {
+    margin: 0px;
+    font-size: 18px;
+    color: rgb(190, 189, 189);
+    display: inline-block;
+	text-align:center;
+}
+.boxed-icon.social-icon a {
+	min-width:40px;
+	line-height:24px;
+	padding: 8px;
+    background-color: #46494a;
+    border: none;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+    -moz-background-clip: inherit;
+    -webkit-background-clip: inherit;
+    background-clip: inherit;
+    border: 1px solid #46494a;
+    color: #fff;
+}
+.boxed-icon.social-icon a i {
+	vertical-align:middle;
+}
+
+/**************************************************************************************
+
+■ {쇼핑몰 상품목록} ▦ Label ▦: 상품목록에 표시되는 버튼방식의 상품정보표시
+
+**************************************************************************************/
+/* ====================================================================================================================
+ * 실행하는 버튼은 아니지만,텍스트강조박스 (상품목록에 할인쿠폰/배송쿠폰 등 작은박스로 표시할때 사용)
+ * ====================================================================================================================*/
+.tbox-yellow {
+	font-size:10px; color: #fff !important; font-family:'Malgun Gothic',"맑은 고딕",AppleGothic,Dotum,"돋움", sans-serif;
+	border: 1px solid rgb(227, 181, 0);  
+	background-color: rgb(251, 202, 3); border-image: none !important; background-image: none !important;
+	padding:2px 1px;
+}
+.tbox-yellowblack {
+	font-size:10px; color: #000 !important; font-family:'Malgun Gothic',"맑은 고딕",AppleGothic,Dotum,"돋움", sans-serif;
+	border: 1px solid rgb(247, 197, 31);  
+	background-color: rgb(255, 209, 35); border-image: none !important; background-image: none !important;
+	padding:2px 1px;
+}
+.tbox-lightviolet {
+	font-size:10px; color: #fff !important; font-family:'Malgun Gothic',"맑은 고딕",AppleGothic,Dotum,"돋움", sans-serif;
+	border: 1px solid rgb(119, 116, 194);  
+	background-color: rgb(136, 132, 215); border-image: none !important; background-image: none !important;
+	padding:2px 1px;
+}
+.tbox-violet {
+	font-size:10px; color: #fff !important; font-family:'Malgun Gothic',"맑은 고딕",AppleGothic,Dotum,"돋움", sans-serif;
+	border: 1px solid rgb(65, 50, 100);  
+	background-color: rgb(85, 60, 125); border-image: none !important; background-image: none !important;
+	padding:2px 1px;
+}
+.tbox-red {
+	font-size:10px; color: #fff !important; font-family:'Malgun Gothic',"맑은 고딕",AppleGothic,Dotum,"돋움", sans-serif;
+	border: 1px solid rgb(213, 7, 15);  
+	background-color: rgb(233, 27, 35); border-image: none !important; background-image: none !important;
+	padding:2px 1px;
+}
+.tbox-darkred {
+	font-size:10px; color: #fff !important; font-family:'Malgun Gothic',"맑은 고딕",AppleGothic,Dotum,"돋움", sans-serif;
+	border: 1px solid rgb(150, 25, 30);  
+	background-color: rgb(170, 60, 63); border-image: none !important; background-image: none !important;
+	padding:2px 1px;
+}
+.tbox-crimson {
+	font-size:10px; color: #fff !important; font-family:'Malgun Gothic',"맑은 고딕",AppleGothic,Dotum,"돋움", sans-serif;
+	border: 1px solid rgb(190, 20, 50);  
+	background-color: rgb(220, 20, 60); border-image: none !important; background-image: none !important;
+	padding:2px 1px;
+}
+.tbox-orange {
+	font-size:10px; color: #fff !important; font-family:'Malgun Gothic',"맑은 고딕",AppleGothic,Dotum,"돋움", sans-serif;
+	border: 1px solid rgb(255, 102, 0);  
+	background-color: rgb(255, 127, 0); border-image: none !important; background-image: none !important;
+	padding:2px 1px;
+}
+.tbox-orangered {
+	font-size:10px; color: #fff !important; font-family:'Malgun Gothic',"맑은 고딕",AppleGothic,Dotum,"돋움", sans-serif;
+	border: 1px solid rgb(240, 0, 0);  
+	background-color: rgb(255, 102, 0); border-image: none !important; background-image: none !important;
+	padding:2px 1px;
+}
+.tbox-lightorange {
+	font-size:10px; color: #fff !important; font-family:'Malgun Gothic',"맑은 고딕",AppleGothic,Dotum,"돋움", sans-serif;
+	border: 1px solid rgb(255, 127, 0);  
+	background-color: rgb(250, 157, 35); border-image: none !important; background-image: none !important;
+	padding:2px 1px;
+}
+.tbox-deepblue {
+	font-size:10px; color: #fff !important; font-family:'Malgun Gothic',"맑은 고딕",AppleGothic,Dotum,"돋움", sans-serif;
+	border: 1px solid rgb(0, 110, 160);  
+	background-color: rgb(0, 125, 180); border-image: none !important; background-image: none !important;
+	padding:2px 1px;
+}
+.tbox-skyblue {
+	font-size:10px; color: #fff !important; font-family:'Malgun Gothic',"맑은 고딕",AppleGothic,Dotum,"돋움", sans-serif;
+	border: 1px solid rgb(60, 180, 245);  
+	background-color: rgb(100, 195, 245); border-image: none !important; background-image: none !important;
+	padding:2px 1px;
+}
+.tbox-blue {
+	font-size:10px; color: #fff !important; font-family:'Malgun Gothic',"맑은 고딕",AppleGothic,Dotum,"돋움", sans-serif;
+	border: 1px solid rgb(40, 130, 190);  
+	background-color: rgb(52, 152, 219); border-image: none !important; background-image: none !important;
+	padding:2px 1px;
+}
+.tbox-navy {
+	font-size:10px; color: #fff !important; font-family:'Malgun Gothic',"맑은 고딕",AppleGothic,Dotum,"돋움", sans-serif;
+	border: 1px solid rgb(40, 40, 50);  
+	background-color: rgb(50, 60, 70); border-image: none !important; background-image: none !important;
+	padding:2px 1px;
+}
+.tbox-gray {
+	font-size:10px; color: #333 !important; font-family:'Malgun Gothic',"맑은 고딕",AppleGothic,Dotum,"돋움", sans-serif;
+	border: 1px solid rgb(204, 204, 204);  
+	background-color: rgb(238, 238, 238); border-image: none !important; background-image: none !important;
+	padding:2px 1px;
+}
+.tbox-lightgray {
+	font-size:10px; color: #333 !important; font-family:'Malgun Gothic',"맑은 고딕",AppleGothic,Dotum,"돋움", sans-serif;
+	border: 1px solid rgb(221, 221, 221);  
+	background-color: rgb(250, 250, 250); border-image: none !important; background-image: none !important;
+	padding:2px 1px;
+}
+.tbox-darkgray {
+	font-size:10px; color: #fff !important; font-family:'Malgun Gothic',"맑은 고딕",AppleGothic,Dotum,"돋움", sans-serif;
+	border: 1px solid rgb(68, 68, 68);  
+	background-color: rgb(102, 102, 102); border-image: none !important; background-image: none !important;
+	padding:2px 1px;
+}
+.tbox-white {
+	font-size:10px; color: #333 !important; font-family:'Malgun Gothic',"맑은 고딕",AppleGothic,Dotum,"돋움", sans-serif;
+	border: 1px solid rgb(187, 187, 187);  
+	background-color: rgb(255, 255, 255); border-image: none !important; background-image: none !important;
+	padding:2px 1px;
+}
+.tbox-black {
+	font-size:10px; color: #fff !important; font-family:'Malgun Gothic',"맑은 고딕",AppleGothic,Dotum,"돋움", sans-serif;
+	border: 1px solid rgb(17, 17, 17);  
+	background-color: rgb(51, 51, 51); border-image: none !important; background-image: none !important;
+	padding:2px 1px;
+}
+.tbox-dark{
+	font-size:10px; color: #fff !important; font-family:'Malgun Gothic',"맑은 고딕",AppleGothic,Dotum,"돋움", sans-serif;
+	border: 1px solid rgb(0, 0, 0);  
+	background-color: rgb(51, 51, 51); border-image: none !important; background-image: none !important;
+	padding:2px 1px;
+}
+.tbox-color{
+	font-size:10px; color: #fff !important; font-family:'Malgun Gothic',"맑은 고딕",AppleGothic,Dotum,"돋움", sans-serif;
+	border: 1px solid rgb(255, 68, 0);  
+	background-color: rgb(255, 102, 0); border-image: none !important; background-image: none !important;
+	padding:2px 1px;
+}
+
+/***********************************************************************
+
+● {공용버튼} ★ Button ★ : 클래스에서 지정하는 방식 class=""
+
+***********************************************************************/
+/* Button 사이즈 구분 */
+.btn { border-radius: 2px; border: 1px solid transparent; font-weight: normal; vertical-align: middle; white-space: nowrap; cursor: pointer; -ms-user-select: none; -webkit-user-select: none; -moz-user-select: none; -o-user-select: none; user-select: none; }
+.btn-lg { padding: 10px 16px; border-radius: 3px; line-height: 1.33; font-size: 18px; }
+.btn-lg i {	top: 3px; font-size: 24px; position: relative; }
+.btn-sm { padding: 5px 8px; }
+.btn-xs { padding: 2px 2px; }
+
+/* Button 사이즈 구분 */
+.btn.btn-none { 
+	color: #333 !important; border-image: none !important; background-image: none !important;
+	border:0px;
+}
+.btn.active.btn-none, .btn.btn-none:hover, .btn.btn-none:focus, .btn.btn-none:active { 
+	color: #999; 
+}
+
+.btn.btn-color {
+	color: #fff !important; border-image: none !important; background-image: none !important;
+	border: 1px solid rgb(255, 68, 0);  
+	background-color: rgb(255, 102, 0); 
+}
+.btn.active.btn-color, .btn.btn-color:hover, .btn.btn-color:focus, .btn.btn-color:active { 
+	background-color: rgb(255, 68, 0);
+}
+.btn.btn-dark { 
+	color: #fff !important; border-image: none !important; background-image: none !important;
+	border: 1px solid #000; 
+	background-color: #333; 
+}
+.btn.active.btn-dark, .btn.btn-dark:hover, .btn.btn-dark:focus, .btn.btn-dark:active { 
+	border-color: rgb(213, 7, 15); 
+	background-color: rgb(213, 7, 15); 
+}
+.btn.btn-black { 
+	color: #fff !important; border-image: none !important; background-image: none !important;
+	border: 1px solid #111; 
+	background-color: #333; 
+}
+.btn.active.btn-black, .btn.btn-black:hover, .btn.btn-black:focus, .btn.btn-black:active { 
+	background-color: #111; 
+}
+.btn.btn-white { 
+	color: #333 !important; border-image: none !important; background-image: none !important;
+	border: 1px solid #bbb; 
+	background-color: #fff; 
+}
+.btn.active.btn-white, .btn.btn-white:hover, .btn.btn-white:focus, .btn.btn-white:active { 
+	background-color: #f5f5f5; 
+}
+.btn.btn-whiteline { 
+	color: #555 !important; border-image: none !important; background-image: none !important;
+	border: 0px solid #bbb; 
+	background-color: #fff; 
+}
+.btn.active.btn-whiteline, .btn.btn-whiteline:hover, .btn.btn-whiteline:focus, .btn.btn-whiteline:active { 
+	border: 1px solid #ddd;  
+}
+.btn.btn-gray { 
+	color: #555 !important; border-image: none !important; background-image: none !important;
+	border: 1px solid #ccc; 
+	background-color: #eee; 
+}
+.btn.active.btn-gray, .btn.btn-gray:hover, .btn.btn-gray:focus, .btn.btn-gray:active { 
+	background-color: #f5f5f5; 
+}
+.btn.btn-lightgray { 
+	color: #333 !important; border-image: none !important; background-image: none !important;
+	border: 1px solid #ddd; 
+	background-color: #fafafa; 
+}
+.btn.active.btn-lightgray, .btn.btn-lightgray:hover, .btn.btn-lightgray:focus, .btn.btn-lightgray:active { 
+	background-color: #efefef; 
+}
+.btn.btn-darkgray { 
+	color: #fff !important; border-image: none !important; background-image: none !important;
+	border: 1px solid #444; 
+	background-color: #666; 
+}
+.btn.active.btn-darkgray, .btn.btn-darkgray:hover, .btn.btn-darkgray:focus, .btn.btn-darkgray:active { 
+	background-color: #444; 
+}
+.btn.btn-red {
+	color: #fff !important; border-image: none !important; background-image: none !important;
+	border: 1px solid rgb(213, 7, 15);  
+	background-color: rgb(233, 27, 35); 
+}
+.btn.active.btn-red, .btn.btn-red:hover, .btn.btn-red:focus, .btn.btn-red:active { 
+	background-color: rgb(213, 7, 15); 
+}
+.btn.btn-darkred {
+	color: #fff !important; border-image: none !important; background-image: none !important;
+	border: 1px solid rgb(150, 25, 30);  
+	background-color: rgb(170, 60, 63); 
+}
+.btn.active.btn-darkred, .btn.btn-darkred:hover, .btn.btn-darkred:focus, .btn.btn-darkred:active { 
+	background-color: rgb(150, 25, 30); 
+}
+.btn.btn-crimson {
+	color: #fff !important; border-image: none !important; background-image: none !important;
+	border: 1px solid rgb(190, 20, 50);  
+	background-color: rgb(220, 20, 60); 
+}
+.btn.active.btn-crimson, .btn.btn-crimson:hover, .btn.btn-crimson:focus, .btn.btn-crimson:active { 
+	background-color: rgb(190, 20, 50); 
+}
+.btn.btn-orangered {
+	color: #fff !important; border-image: none !important; background-image: none !important;
+	border: 1px solid rgb(240, 0, 0);  
+	background-color: orangered; 
+}
+.btn.active.btn-orangered, .btn.btn-orangered:hover, .btn.btn-orangered:focus, .btn.btn-orangered:active { 
+	background-color: rgb(240, 0, 0); 
+}
+.btn.btn-orange {
+	color: #fff !important; border-image: none !important; background-image: none !important;
+	border: 1px solid rgb(255, 102, 0);  
+	background-color: rgb(255, 127, 0); 
+}
+.btn.active.btn-orange, .btn.btn-orange:hover, .btn.btn-orange:focus, .btn.btn-orange:active { 
+	background-color: rgb(255, 102, 0); 
+}
+.btn.btn-lightorange {
+	color: #fff !important; border-image: none !important; background-image: none !important;
+	border: 1px solid rgb(255, 127, 0);  
+	background-color: rgb(250, 157, 35); 
+}
+.btn.active.btn-lightorange, .btn.btn-lightorange:hover, .btn.btn-lightorange:focus, .btn.btn-lightorange:active { 
+	background-color: rgb(255, 127, 0); 
+}
+.btn.btn-green {
+	color: #fff !important; border-image: none !important; background-image: none !important;
+	border: 1px solid rgb(110, 180, 20);  
+	background-color: rgb(140, 195, 70); 
+}
+.btn.active.btn-green, .btn.btn-green:hover, .btn.btn-green:focus, .btn.btn-green:active { 
+	background-color: rgb(110, 180, 20); 
+}
+.btn.btn-lightgreen {
+	color: #fff !important; border-image: none !important; background-image: none !important;
+	border: 1px solid rgb(130, 190, 60);  
+	background-color: rgb(160, 200, 80); 
+}
+.btn.active.btn-lightgreen, .btn.btn-lightgreen:hover, .btn.btn-lightgreen:focus, .btn.btn-lightgreen:active { 
+	background-color: rgb(130, 190, 60); 
+}
+.btn.btn-deepblue {
+	color: #fff !important; border-image: none !important; background-image: none !important;
+	border: 1px solid rgb(0, 110, 160);  
+	background-color: rgb(0, 125, 180); 
+}
+.btn.active.btn-deepblue, .btn.btn-deepblue:hover, .btn.btn-deepblue:focus, .btn.btn-deepblue:active { 
+	background-color: rgb(0, 110, 160); 
+}
+.btn.btn-skyblue {
+	color: #fff !important; border-image: none !important; background-image: none !important;
+	border: 1px solid rgb(60, 180, 245);  
+	background-color: rgb(100, 195, 245); 
+}
+.btn.active.btn-skyblue, .btn.btn-skyblue:hover, .btn.btn-skyblue:focus, .btn.btn-skyblue:active { 
+	background-color: rgb(60, 180, 245); 
+}
+.btn.btn-blue {
+	color: #fff !important; border-image: none !important; background-image: none !important;
+	border: 1px solid rgb(40, 130, 190);  
+	background-color: rgb(52, 152, 219); 
+}
+.btn.active.btn-blue, .btn.btn-blue:hover, .btn.btn-blue:focus, .btn.btn-blue:active { 
+	background-color: rgb(40, 130, 190); 
+}
+.btn.btn-navy {
+	color: #fff !important; border-image: none !important; background-image: none !important;
+	border: 1px solid rgb(40, 40, 50);  
+	background-color: rgb(50, 60, 70); 
+}
+.btn.active.btn-navy, .btn.btn-navy:hover, .btn.btn-navy:focus, .btn.btn-navy:active { 
+	background-color: rgb(40, 40, 50); 
+}
+.btn.btn-violet {
+	color: #fff !important; border-image: none !important; background-image: none !important;
+	border: 1px solid rgb(65, 50, 100);  
+	background-color: rgb(85, 60, 125); 
+}
+.btn.active.btn-violet, .btn.btn-violet:hover, .btn.btn-violet:focus, .btn.btn-violet:active { 
+	background-color: rgb(65, 50, 100); 
+}
+.btn.btn-yellow {
+	color: #fff !important; border-image: none !important; background-image: none !important;
+	border: 1px solid rgb(227, 181, 0);  
+	background-color: rgb(251, 202, 3); 
+}
+.btn.active.btn-yellow, .btn.btn-yellow:hover, .btn.btn-yellow:focus, .btn.btn-yellow:active { 
+	background-color: rgb(227, 181, 0); 
+}
+.btn.btn-lightpurple {
+	color: #fff !important; border-image: none !important; background-image: none !important;
+	border: 1px solid rgb(119, 116, 194);  
+	background-color: rgb(136, 132, 215); 
+}
+.btn.active.btn-lightpurple, .btn.btn-lightpurple:hover, .btn.btn-lightpurple:focus, .btn.btn-lightpurple:active { 
+	background-color: rgb(119, 116, 194); 
+}
+.btn.btn-lightviolet {
+	color: #fff !important; border-image: none !important; background-image: none !important;
+	border: 1px solid rgb(119, 116, 194);  
+	background-color: rgb(136, 132, 215); 
+}
+.btn.active.btn-lightviolet, .btn.btn-lightviolet:hover, .btn.btn-lightviolet:focus, .btn.btn-lightviolet:active { 
+	background-color: rgb(119, 116, 194); 
+}
+.btn.btn-yellowblack { 
+	color: #000 !important; border-image: none !important; background-image: none !important;
+	border: 1px solid rgb(247, 197, 31);  
+	background-color: rgb(255, 209, 35); 
+}
+.btn.active.btn-yellowblack, .btn.btn-yellowblack:hover, .btn.btn-yellowblack:focus, .btn.btn-yellowblack:active { 
+	background-color: rgb(247, 197, 31); 
+}
+.btn.btn-trans { 
+	color: #fff !important; border-image: none !important; background: none;
+	border: 2px solid #fff; 
+}
+.btn.active.btn-trans, .btn.btn-trans:hover, .btn.btn-trans:focus, .btn.btn-trans:active { 
+	color: rgb(213, 7, 15) !important; 
+	background-color: #fff; 
+	background-image: none; 
+}
+
+/***********************************************************************
+
+● {백그라운드 CLASS지정} ★ Trans Background Color ★ : 클래스에서 지정하는 방식 class=""
+
+***********************************************************************/
+.trans-bg-red { 
+	background-color: rgba(233, 27, 35, 0.75) !important; 
+	color: #fff !important; 
+}
+.trans-bg-darkred { 
+	background-color: rgba(170, 60, 63, 0.75) !important;
+	color: #fff !important; 
+}
+.trans-bg-crimson { 
+	background-color: rgba(220, 20, 60, 0.75) !important; 
+	color: #fff !important; 
+}
+.trans-bg-orangered { 
+	background-color: rgba(255, 70, 0, 0.75) !important;
+	color: #fff !important; 
+}
+.trans-bg-orange { 
+	background-color: rgba(240, 150, 20, 0.75) !important;
+	color: #fff !important; 
+}
+.trans-bg-green { 
+	background-color: rgba(140, 195, 70, 0.75) !important; 
+	color: #fff !important; 
+}
+.trans-bg-lightgreen { 
+	background-color: rgba(160, 200, 80, 0.75) !important; 
+	color: #fff !important; 
+}
+.trans-bg-deepblue { 
+	background-color: rgba(0, 125, 180, 0.75) !important; 
+	color: #fff !important; 
+}
+.trans-bg-skyblue { 
+	background-color: rgba(100, 195, 245, 0.75) !important; 
+	color: #fff !important; 
+}
+.trans-bg-blue { 
+	background-color: rgba(52, 152, 219, 0.75) !important; 
+	color: #fff !important; 
+}
+.trans-bg-navy { 
+	background-color: rgba(50, 60, 70, 0.75) !important; 
+	color: #fff !important; 
+}
+.trans-bg-violet { 
+	background-color: rgba(85, 60, 125, 0.75) !important; 
+	color: #fff !important; 
+}
+.trans-bg-yellow { 
+	background-color: rgba(241, 196, 15, 0.75) !important; 
+	color: #fff !important; 
+}
+.trans-bg-darkgray { 
+	background-color: rgba(102, 98, 98, 0.75) !important; 
+	color: #fff !important; 
+}
+.trans-bg-gray { 
+	background-color: rgba(102, 102, 102, 0.75) !important; 
+	color: #fff !important; 
+}
+.trans-bg-lightgray { 
+	background-color: rgba(208, 208, 208, 0.75) !important; 
+	color: #fff !important; 
+}
+.trans-bg-white { 
+	background-color: rgba(255, 255, 255, 0.75) !important; 
+	color: #333 !important; 
+}
+.trans-bg-black { 
+	background-color: rgba(0, 0, 0, 0.75) !important; 
+	color: #fff !important; 
+}
+.trans-bg-color { 
+	background-color: rgba(233, 27, 35, 0.75) !important; 
+	color: #fff !important; 
+}
+.trans-bg-full { 
+	width:100%; 
+	height:100%; 
+	overflow:hidden; 
+	padding:8% !important; 
+	text-overflow:clip; 
+	white-space:normal; 
+}
+
+/***********************************************************************
+
+● {CLASS지정} ★ Background Color ★ : 클래스에서 지정하는 방식 class=""
+
+***********************************************************************/
+.bg-red, i.bg-red, .badge.bg-red { background-color: rgb(233, 27, 35); color: #fff; }
+.bg-darkred, i.bg-darkred, .badge.bg-darkred { background-color: rgb(170, 60, 63); color: #fff; }
+.bg-crimson, i.bg-crimson, .badge.bg-crimson { background-color: rgb(220, 20, 60); color: #fff; }
+.bg-orangered, i.bg-orangered, .badge.bg-orangered { background-color: orangered; color: #fff; }
+.bg-orange, i.bg-orange, .badge.bg-orange { background-color: rgb(240, 150, 20); color: #fff; }
+.bg-green, i.bg-green, .badge.bg-green { background-color: rgb(140, 195, 70); color: #fff; }
+.bg-lightgreen, i.bg-lightgreen, .badge.bg-lightgreen { background-color: rgb(160, 200, 80); color: #fff; }
+.bg-deepblue, i.bg-deepblue, .badge.bg-deepblue { background-color: rgb(0, 125, 180); color: #fff; }
+.bg-skyblue, i.bg-skyblue, .badge.bg-skyblue { background-color: rgb(100, 195, 245); color: #fff; }
+.bg-blue, i.bg-blue, .badge.bg-blue { background-color: rgb(52, 152, 219); color: #fff; }
+.bg-navy, i.bg-navy, .badge.bg-navy { background-color: rgb(50, 60, 70); color: #fff; }
+.bg-violet, i.bg-violet, .badge.bg-violet { background-color: rgb(85, 60, 125); color: #fff; }
+.bg-yellow, i.bg-yellow, .badge.bg-yellow { background-color: rgb(241, 196, 15); color: #fff; }
+.bg-darkgray, i.bg-darkgray, .badge.bg-darkgray { background-color: #666; color: #fff; }
+.bg-gray, i.bg-gray, .badge.bg-gray { background-color: #888; color: #fff; }
+.bg-lightgray, i.bg-lightgray, .badge.bg-lightgray { background-color: #ddd; color: #fff; }
+.bg-white, i.bg-white, .badge.bg-white { background-color: #fff; color: #333; }
+.bg-light, i.bg-light, .badge.bg-light { color: #333; background-color: #f5f5f5; }
+.bg-light-border, i.bg-light-border, .badge.bg-light-border { color: #333; background-color: #fafafa; border-bottom:1px solid #ddd; }
+.bg-black, i.bg-black, .badge.bg-black { background-color: #333; color: #fff; }
+.bg-color, i.bg-color, .badge.bg-color { background-color: rgb(233, 27, 35);color: #fff; }
+
+
+/***********************************************************************
+
+● {CLASS지정} ★ Font ★ : 클래스에서 지정하는 방식 class=""
+
+***********************************************************************/
+.font-normal {font-weight:normal;}
+.font-bold {font-weight:bold;}
+.font-300 {font-weight:300;}
+.font-500 {font-weight:500;}
+.font-700 {font-weight:700;}
+.font-900 {font-weight:900;}
+
+.font-8, i.font-8 {font-size: 8px;}
+.font-9, i.font-9 {font-size: 9px;}
+.font-10, i.font-10 {font-size: 10px;}
+.font-11, i.font-11 {font-size: 11px;}
+.font-12, i.font-12 {font-size: 12px;}
+.font-13, i.font-13 {font-size: 13px;}
+.font-14, i.font-14 {font-size: 14px;}
+.font-15, i.font-15 {font-size: 15px;}
+.font-16, i.font-16 {font-size: 16px;}
+.font-18, i.font-18 {font-size: 18px;}
+.font-20, i.font-20 {font-size: 20px;}
+.font-22, i.font-22 {font-size: 22px;}
+.font-24, i.font-24 {font-size: 24px;}
+.font-26, i.font-26 {font-size: 26px;}
+.font-28, i.font-28 {font-size: 28px;}
+.font-30, i.font-30 {font-size: 30px;}
+.font-32, i.font-32 {font-size: 32px;}
+.font-34, i.font-34 {font-size: 34px;}
+.font-36, i.font-36 {font-size: 36px;}
+.font-40, i.font-40 {font-size: 40px;}
+.font-48, i.font-48 {font-size: 48px;}
+
+/***********************************************************************
+
+● {CLASS지정} ★ Font-Color ★ : 클래스에서 지정하는 방식 class=""
+
+***********************************************************************/
+.red, i.red {color: rgb(233, 27, 35);}
+.darkred, i.darkred {color: rgb(170, 60, 63);}
+.crimson, i.crimson {color: rgb(220, 20, 60);}
+
+.orangered, i.orangered {color: orangered;}
+.orange, i.orange {color:#FF9B14;}
+
+.darkgreen, i.darkgreen {color:#4E930A;}
+.sharpgreen, i.sharpgreen {color:#68C40E;}
+.green, i.green {color:#8CC346;}
+.lightgreen, i.lightgreen {color:#A0C850;}
+
+.blue, i.blue {color:#3498DB;}
+.lightblue, i.lightblue {color:#ADCDE9;}
+.deepblue, i.deepblue {color:#007DB4;}
+.skyblue, i.skyblue {color:#64C3F5;}
+.navy, i.navy {color:#28325A;}
+
+.violet, i.violet {color:#553C7D;}
+.lightviolet, i.lightviolet {color:#C080C0;}
+
+.pink, i.pink {color:#E137B4;}
+.lightpink, i.lightpink {color:#E869C7;}
+
+.yellow, i.yellow {color:#F1C40F;}
+.lightyellow, i.lightyellow {color:#FDED80;}
+.darkyellow, i.darkyellow {color:#FCFF00;}
+
+.darkgray, i.darkgray {color: #555;}
+.gray, i.gray {color: #888;}
+.pastelgray, i.pastelgray {color: #aaa;}
+.lightgray, i.lightgray {color: #ddd;}
+.silver, i.silver {color: #E3E3E3;}
+
+.white, i.white {color: #FFF;}
+.light, i.light {color: #F5F5F5;}
+.black, i.black {color: #333;}
+.darkblack, i.darkblack {color: #000;}
+.color, i.color {color: rgb(233, 27, 35);}
+
+/***********************************************************************
+● {CLASS지정} ★ Height ★ : 클래스에서 지정하는 방식 class=""
+***********************************************************************/
+.lineh-10 {line-height:10px;}
+.lineh-11 {line-height:11px;}
+.lineh-12 {line-height:12px;}
+.lineh-13 {line-height:13px;}
+.lineh-14 {line-height:14px;}
+.lineh-15 {line-height:15px;}
+.lineh-16 {line-height:16px;}
+.lineh-17 {line-height:17px;}
+.lineh-18 {line-height:18px;}
+.lineh-19 {line-height:19px;}
+.lineh-20 {line-height:20px;}
+.lineh-21 {line-height:21px;}
+.lineh-22 {line-height:22px;}
+.lineh-23 {line-height:23px;}
+.lineh-24 {line-height:24px;}
+.lineh-25 {line-height:25px;}
+.lineh-26 {line-height:26px;}
+.lineh-27 {line-height:27px;}
+.lineh-28 {line-height:28px;}
+.lineh-29 {line-height:29px;}
+.lineh-30 {line-height:30px;}
+
+/***********************************************************************
+● {CLASS지정} ★ Line ★ : 클래스에서 지정하는 방식 class=""
+***********************************************************************/
+.line-lightgray {height:1px;margin:10px 0px 15px; background:#d5d5d5;}
+.line-gray {height:1px;margin:10px 0px 15px; background:#ccc;}
+
+/***********************************************************************
+● {CLASS지정} ★ test-align ★ : 클래스에서 지정하는 방식 class=""
+***********************************************************************/
+.center { text-align:center;}
+.left { text-align:left;}
+.right { text-align:right;}
+
+/***********************************************************************
+● {CLASS지정} ★ Style ★ : 클래스에서 지정하는 방식 class=""
+***********************************************************************/
+.cursor {cursor:pointer;}
+.count {font-size:11px;font-weight:bold;font-family:verdana;letter-spacing:-1px;}
+.block {display:block;}
+/* [내용이 박스밖으로 나가지않게2] 넓이를 지정하였더라도 자동으로 줄바꿈되지 않게 강제로 개행을 막아줌 (overflow:hidden; 필요시함께사용) */
+.nowrap {white-space:nowrap;}
+/* [내용이 박스밖으로 나가지않게2] 문장을 띄어쓰기 할때 쓰인 공백기준이 아닌 문자단위로 끊어주는 속성 */
+.break-word {word-wrap: break-word;}
+/* [내용이 박스밖으로 나가지않게3] 텍스트가 넘칠때, 말줄임표( ... )가 나오게 하는 속성,적용조건 white-space:nowrap; 과 반드시 함께 사용 */
+.ellipsis { display:block;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;overflow:hidden;}
+.no-border {border:0 !important;}
+.no-margin {margin:0 !important;}
+.no-animation .collapsing {-webkit-transition: none;transition: none;}
+.no-scrollbar {-ms-overflow-style: none;}
+.no-scrollbar::-webkit-scrollbar {width: 0; display:none; }
+.btn-wset {display:none;}
+/* padding 값입력시 크롬에서는 사이즈가 늘어나는 오류가 나므로, 아래 코드를 추가함 */
+.chrome {-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+
+/***********************************************************************
+● {CLASS지정} ★ Width ★ : 클래스에서 지정하는 방식 class=""
+***********************************************************************/
+.w1 {width:1px;margin:0px;padding:0px;}
+.w30 {width:30px;}
+.w40 {width:40px;}
+.w50 {width:50px;}
+.w60 {width:60px;}
+.w70 {width:70px;}
+.w80 {width:80px;}
+.w90 {width:90px;}
+.w100 {width:100px;}
+
+.w25per{width:25%;}
+.w33per{width:33.3%;}
+.w50per{width:50%;}
+.w80per{width:80%;}
+.w90per{width:90%;}
+.w95per{width:95%;}
+.w100per{width:100%;}
+
+/***********************************************************************
+● {CLASS지정} ★ Height ★ : 클래스에서 지정하는 방식 class=""
+***********************************************************************/
+.height1 {height:1px; margin:0; padding:0;}
+.height5 {height:5px; margin:0; padding:0;}
+.h1 {height:1px; margin:0; padding:0;}
+.h5 {height:5px; margin:0; padding:0;}
+.h10 {height:10px;}
+.h15 {height:15px;}
+.h20 {height:20px;}
+.h25 {height:25px;}
+.h30 {height:30px;}
+.h35 {height:35px;}
+.h40 {height:40px;}
+.h45 {height:45px;}
+.h50 {height:50px;}
+.h60 {height:60px;}
+.h70 {height:70px;}
+.h80 {height:80px;}
+.h90 {height:90px;}
+.h100 {height:100px;}
+.h100per {height:100%;}
+
+.p-tb5 {padding:5px 0px;}
+.p-tb10 {padding:10px 0px;}
+.p-tb15 {padding:15px 0px;}
+.m5 {margin:5px 0px;}
+.m10 {margin:10px 0px;}
+.m15 {margin:15px 0px;}
+.p-lr3 {padding:0px 3px;}
+.p-lr5 {padding:0px 5px;}
+.p-lr7 {padding:0px 7px;}
+.p-lr10 {padding:0px 10px;}
+.p-lr15 {padding:0px 15px;}
+
+/* Print Media Query */
+@media print { 
+	a:after { content: "" !important; /* disable URL display */ }
+}

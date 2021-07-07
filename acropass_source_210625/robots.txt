@@ -1,0 +1,4 @@
+﻿User-agent: *
+Allow: /
+Disallow: /adm/
+Sitemap: http://acropass.com/sitemap.php

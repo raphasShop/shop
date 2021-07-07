@@ -1,0 +1,127 @@
+INFO	[2019-04-13 19:33:24:709] <18164> START INIPHP repay (V5036-141209)(OS:Linux4.8.0-46-generic,PHP:7.0.18-0ubuntu0.16.10.1)
+DEBUG	[2019-04-13 19:33:24:709] <18164> inipayhome:/var/www/acropass/shop/inicis
+DEBUG	[2019-04-13 19:33:24:709] <18164> debug:false
+DEBUG	[2019-04-13 19:33:24:709] <18164> type:repay
+DEBUG	[2019-04-13 19:33:24:709] <18164> pgid:INIphpRPAY
+DEBUG	[2019-04-13 19:33:24:709] <18164> subpgip:203.238.3.10
+DEBUG	[2019-04-13 19:33:24:709] <18164> mid:INIpayTest
+DEBUG	[2019-04-13 19:33:24:709] <18164> admin:1111
+DEBUG	[2019-04-13 19:33:24:709] <18164> oldtid:StdpayCARDINIpayTest20190413185256662094
+DEBUG	[2019-04-13 19:33:24:709] <18164> currency:WON
+DEBUG	[2019-04-13 19:33:24:709] <18164> price:1000
+DEBUG	[2019-04-13 19:33:24:709] <18164> confirm_price:0
+DEBUG	[2019-04-13 19:33:24:709] <18164> buyeremail:jjy2380@gmail.com
+DEBUG	[2019-04-13 19:33:24:709] <18164> tax:91
+DEBUG	[2019-04-13 19:33:24:709] <18164> taxfree:0
+INFO	[2019-04-13 19:33:24:709] <18164> Check Field OK
+INFO	[2019-04-13 19:33:24:709] <18164> Make TID OK INIphpRPAYINIpayTest20190413193324096572
+INFO	[2019-04-13 19:33:24:709] <18164> PI PUB KEY LOAD OK []
+INFO	[2019-04-13 19:33:24:710] <18164> PG PUB KEY LOAD OK [30]
+INFO	[2019-04-13 19:33:24:710] <18164> MERCHANT PRIV KEY LOAD OK
+INFO	[2019-04-13 19:33:24:710] <18164> MERCHANT PUB KEY LOAD OK [0]
+DEBUG	[2019-04-13 19:33:24:711] <18164> MAKE ENCRYPT OK[<?xml version="1.0" encoding="UTF-8"?>
+<PartCancelInfo>
+	  <PRTC_TID>StdpayCARDINIpayTest20190413185256662094</PRTC_TID>
+	  <PRTC_Price>1000</PRTC_Price>
+	  <PRTC_Remains/>
+	  <PRTC_Quota/>
+	  <PRTC_Interest/>
+	  <PRTC_NoAcctFNBC/>
+	  <PRTC_NmAcctFNBC/></PartCancelInfo>]
+INFO	[2019-04-13 19:33:24:711] <18164> MAKE BODY OK
+INFO	[2019-04-13 19:33:24:711] <18164> SIGN OK
+INFO	[2019-04-13 19:33:24:711] <18164> MAKE HEAD OK
+INFO	[2019-04-13 19:33:24:711] <18164> MSG_TO_PG:[0108200175D SHA1                   0                                      300620INIpayTest                1000INIphpRPAYINIpayTest20190413193324096572<?xml version="1.0" encoding="UTF-8"?>
+<INIpay>
+	  <PartCancelInfo>
+	    <SessionKey>NojoLr1rfG0jXb7zJAUWm6DdoYVJfKqY9v4qbhxDGt7FM6kHjCAl4Mi5FO/qmXPe
+gWu94QqXws1PPuHacNyoA2t2Cl4JjfvrthE/DCMfrx+HYASXHdkPKv5PG9mTlJcf
+pdGdsgF876XcWgVlolUifI0GENJzS8wp9COCuwW/pvvwpubMpeaDHg==
+</SessionKey>
+	    <Encrypted>WUr1GaUD3sv85DHCehEriHoH65IWXvIs7cjUmdz2AUM+4bf0EcXivBwRn+S2K5Xa
+gy9NQW2Nk3cDfn4nH9MwV18L18VzXaP9DCrYr+4DGc6vNMNffuyr8QjwhYy3mxrN
+Gv3VndVF0gVVrhXYuKVEAQfQqnI9diXi7ACx/x/cGwxv9HHBMtUPHXV+9UL1Hzxy
+eUiQL5ij59o236ojpsCAM+gWDl9TDVIocElSiNOOZATM86k09f7SbFvrOzacK7TI
+YjgV2hK35ftF9Thlq23cK68ywtoJBCs6BKjNgyeH+R90VOaPYGaD5qhW60WPA7wJ
+5qxlfVjedMPmZkpxFAdMDG4BwQm7TwHLLBtaBq/hpxc=
+</Encrypted></PartCancelInfo>
+	  <GoodsInfo>
+	    <Tax>91</Tax>
+	    <TaxFree/>
+	    <Currency>WON</Currency></GoodsInfo>
+	  <ReservedInfo>
+	    <MReserved1/>
+	    <MReserved2/>
+	    <MReserved3/></ReservedInfo>
+	  <ManageInfo>
+	    <Language/>
+	    <URL/>
+	    <TXVersion>5036B141209repayLinux     PHPchkfake   4.8.0-46-genericPHP:7.0.18-0ub</TXVersion>
+	    <TXUserID/>
+	    <TXRegNum/></ManageInfo></INIpay>fcbnvf6p5CCu1QlC0jBTyOrNfaWuopONpLKgKJAl3nHtDaN2dBsZguin7pXulsdw
+dlNAEmn1xm1w5BmGmi3OcpKh91X4tSOOYR9d2A3octJ9Jzsx6rxy+NICijPqFmpe
+UltPXTD14GXgMNyJjw5I9LSI5yjhXUS9X3JSbOqAQBM=
+]
+INFO	[2019-04-13 19:33:24:711] <18164> DNS LOOKUP OK(203.238.37.3:203.238.37.3:34049) laptime:0
+INFO	[2019-04-13 19:33:24:747] <18164> SOCKET CONNECT OK
+INFO	[2019-04-13 19:33:24:747] <18164> SEND OK
+INFO	[2019-04-13 19:33:24:979] <18164> RECV OK
+INFO	[2019-04-13 19:33:24:979] <18164> MSG_FROM_PG:[0149100175D SHA1                   0                                      300630INIpayTest                1000INIphpRPAYINIpayTest20190413193324096572<?xml version="1.0" encoding="UTF-8"?>
+<INIpay>
+  <PartCancelInfo>
+    <PayMethod>Card</PayMethod>
+    <ResultCode>120000</ResultCode>
+    <ResultMsg urlencode="1">%C1%A4%BB%F3%C3%B3%B8%AE%B5%C7%BE%FA%BD%C0%B4%CF%B4%D9.</ResultMsg>
+    <SessionKey>gThLrulRLnttVMGvTFkkIec0ZluBetfjqC1eCTH0feczo8MkQ+d34Y8KOVv5tE07
+Bc0h8NQ6r6vz4aYLki1aj8TfwYiPHhDs+jkX9ry427OW7UwH1M6hxUDZ4JL8eUQX
+nCx4gB7J5juHbhhAP7k9OeM4zzSbO7gyKQeL3XNfuT/pMBhpQUH9xQ==
+</SessionKey>
+    <Encrypted>IBeSNrqHfk4Scn16jh8HhMh0T0RlLUS212ZLKvDS/VLKrgcLfMyCrJrYn26POdZh
+0K8SVVENBiIesYEyGfa7/OPLRZQQvK1fCwKEsQdbtolVHJ7cADbBH0/MAHYdZrDf
+zSCCJR6aNMMNrxAO1Q1JZm1vQDqVOSNKMumlyDnbo9Ns8HQfm/HmfipaXvk7a5rQ
+GuwFk4Lm3BO9804YqHaHQjKe2vZSfqikQMdP7BF3duSy6GoVblW/ZvTKmVsQI3v4
+Ep+CkJVOgTL67+83cOrA0qz/CZ7QF4Umbt9JGzLk7yghQCHe2wyD60TsOV/QqedZ
+UMXAYeFXFmDnArCRLx6Gkv/NAIGkY0zG+tq4ypWlTshPCOL1lgL/W8tfRID63dMk
+EIhFAPAAlAGtHfJ9KyJiUdRAqwdnBFGTSGp2vG8edGVXFcsXK2ZjXGg4CKEKwFTW
+W5rli+JcVY1Lb8GLa10OjLzrU4ReYrhR8D/qYBTSgUEf4Tn71IJPqqV3yLM3fdIe
+bCuKMg/c1hEaa1R2AspNHeRrMNHOZB1mNeT5m6iSDM04sDwdtNBa7FyWpbcyjUFS
+aatPpoivnU1v04+/Bi559qvj4qCOKFuQSPIpTSnA+YLSH3oiwDF25rG92H+0FCCq
+Ae4h7YXUquk=
+</Encrypted>
+  </PartCancelInfo>
+  <ManageInfo/>
+  <ReservedInfo>
+    <MReserved1 urlencode="1"></MReserved1>
+    <MReserved2 urlencode="1"></MReserved2>
+    <MReserved3 urlencode="1"></MReserved3>
+    <PGReserved1 urlencode="1"></PGReserved1>
+    <PGReserved2 urlencode="1"></PGReserved2>
+    <PGReserved3 urlencode="1"></PGReserved3>
+  </ReservedInfo>
+</INIpay>
+CT/sqDJ5sLB2Hj6nUWUl8LkbaRkdliuBHW7XYxRpcOwc2YcpJd/dXU82Ps5UXxkH
+gKwEtevBNrI+xiTVyN/oWHVqtEYmLCso2Z0J6sD26DAZOC0hCxDwSdsXKP1UvaxQ
+DQZYRcdTn7IOjL2Ew5/eoW36opMqeK/RgnTNA507Om0=
+]
+INFO	[2019-04-13 19:33:24:979] <18164> VERIFY OK
+INFO	[2019-04-13 19:33:24:979] <18164> PARSE HEAD OK
+INFO	[2019-04-13 19:33:24:980] <18164> PARSE BODY OK
+INFO	[2019-04-13 19:33:24:980] <18164> DECRYPT OK
+DEBUG	[2019-04-13 19:33:24:980] <18164> DECRYPT MSG:[<?xml version="1.0" encoding="UTF-8"?>
+<PartCancelInfo>
+  <PRTC_TID>StdpayCARDINIpayTest20190413185256662094</PRTC_TID>
+  <PRTC_Price>1000</PRTC_Price>
+  <PRTC_Remains>0</PRTC_Remains>
+  <PRTC_Quota>00</PRTC_Quota>
+  <PRTC_Type>1</PRTC_Type>
+  <CancelDate>20190413</CancelDate>
+  <CancelTime>193324</CancelTime>
+  <CARD_ApplNum></CARD_ApplNum>
+  <ExchangeRate></ExchangeRate>
+  <MOID urlencode="1"></MOID>
+  <PRTC_Cnt>1</PRTC_Cnt>
+  <PRTC_SubRemains></PRTC_SubRemains>
+</PartCancelInfo>]
+INFO	[2019-04-13 19:33:24:980] <18164> DECRYPT PARSE OK
+INFO	[2019-04-13 19:33:24:980] <18164> END repay 정상처리되었습니다. Laptime:[0.271sec]
+INFO	[2019-04-13 19:33:24:980] <18164> ===============================================================

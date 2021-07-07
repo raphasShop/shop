@@ -1,0 +1,194 @@
+@charset "utf-8";
+/* CSS Document */
+
+/********************************************************
+
+■ 모바일스위치타입 - 체크박스 (사용함/사용않함 표시)
+
+********************************************************/
+.switch-check {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 34px;
+  margin:3px 5px 3px 0px;
+  color:#FFF;
+  font-family:'Malgun Gothic',"맑은 고딕",AppleGothic,Dotum,"돋움", sans-serif;
+}
+/*스위치바탕 ie에서 테두리생김방지*/
+.switch-check input {display:none;}
+
+/*OFF된 스위치바탕*/
+.check-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition:.4s;
+}
+
+/*OFF된 스위치바탕에 글씨쓰기*/
+.check-slider:after {
+  position: absolute;
+  content: "OFF";
+  color: #E9E9E9;
+  font-size:0.95em;
+  font-weight:bold;
+  padding-left:41px;
+  line-height:32px;
+}
+
+/* 스위치버튼 안쪽에 동그란모양 (OFF 사용안함 표시) */
+.check-slider:before {
+  position: absolute;
+  content: "";
+  /*
+  color: #BBB;
+  font-size:0.65em;
+  font-weight:bold;
+  text-align:center;
+  line-height:26px;
+  letter-spacing:0px;
+  */
+  height: 28px;
+  width: 28px;
+  left: 0px;
+  bottom: 0px;
+  background: white;
+  border:solid 3px #C9C9C9;
+  -webkit-box-shadow: 0 3px 4px rgba(0,0,0,0.15);box-shadow: 0px 3px 4px rgba(0,0,0,0.15);
+  transition: .4s;
+  
+}
+
+/*체크된(on된)스위치바탕*/
+input:checked + .check-slider {
+  /*background: #2196F3;*/
+  background: #14CAE0;
+
+}
+
+/*체크된(on된)스위치바탕에 글씨쓰기*/
+input:checked + .check-slider:after {
+  content: "On";
+  color: #FFF;
+  font-size:1.5em;
+  font-weight:bold;
+  padding-left:14px;
+  line-height:32px;
+  letter-spacing:-0.5px;
+}
+
+/*스위치버튼을 클릭하면 버튼주위에 글로우효과*/
+input:focus + .check-slider {
+  box-shadow: 0 0 20px #2196F3;
+}
+/* 스위치버튼을 클릭하면 우측으로 26px이동 (ON 사용함 표시) */
+input:checked + .check-slider:before {
+  transform: translateX(46px);
+  /*
+  color: #06aecc;
+  font-size:1.2em;
+  font-weight:bold;
+  text-align:center;
+  line-height:22px;
+  letter-spacing:-0.5px;
+  */
+  content: "";
+  border:solid 3px #14CAE0;
+  -webkit-box-shadow: 0 3px 4px rgba(0,0,0,0.25);box-shadow: 0px 3px 4px rgba(0,0,0,0.25);
+}
+
+/*Rounded sliders*/
+.check-slider.round {
+  border-radius: 34px;
+}
+/*스위치버튼 안쪽에 동그란모양*/
+.check-slider.round:before {
+  border-radius: 50%;
+}
+
+/********************************************************
+
+■ 모바일스위치타입 - 미니사이즈 체크박스 (사용함/사용않함 표시)
+
+********************************************************/
+.switch-check-mini {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 28px;
+  margin:3px 1px 3px 1px;
+  color:#FFF;
+  font-family:'Malgun Gothic',"맑은 고딕",AppleGothic,Dotum,"돋움", sans-serif;
+}
+/*스위치바탕 ie에서 테두리생김방지*/
+.switch-check-mini input {display:none;}
+
+.check-slider-mini {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition:.4s;
+}
+
+/* 스위치버튼 안쪽에 동그란모양 (OFF 사용안함 표시) */
+.check-slider-mini:before {
+  position: absolute;
+  content: "OFF";
+  color: #BBB;
+  font-size:0.65em;
+  font-weight:bold;
+  text-align:center;
+  line-height:23px;
+  letter-spacing:0px;
+  height: 24px;
+  width: 24px;
+  left: 0px;
+  bottom: 0px;
+  background: white;
+  border:solid 2px #ccc;
+  -webkit-box-shadow: 0 3px 4px rgba(0,0,0,0.15);box-shadow: 0px 3px 4px rgba(0,0,0,0.15);
+  transition: .4s;
+  
+}
+
+/*체크된(on된)스위치바탕*/
+input:checked + .check-slider-mini {
+  /*background: #2196F3;*/
+  background: #14cae0;
+}
+
+/*스위치버튼을 클릭하면 버튼주위에 글로우효과*/
+input:focus + .check-slider-mini {
+  box-shadow: 0 0 3px #2196F3;
+}
+/* 스위치버튼을 클릭하면 우측으로 26px이동 (ON 사용함 표시) */
+input:checked + .check-slider-mini:before {
+  transform: translateX(15px);
+  color: #06aecc;
+  font-size:1.1em;
+  font-weight:bold;
+  text-align:center;
+  line-height:20px;
+  letter-spacing:-0.7px;
+  content: "on";
+  border:solid 2px #14CAE0;
+  -webkit-box-shadow: 0 3px 4px rgba(0,0,0,0.25);box-shadow: 0px 3px 4px rgba(0,0,0,0.25);
+}
+
+/*Rounded sliders*/
+.check-slider-mini.round {
+  border-radius: 30px;
+}
+/*스위치버튼 안쪽에 동그란모양*/
+.check-slider-mini.round:before {
+  border-radius: 50%;
+}

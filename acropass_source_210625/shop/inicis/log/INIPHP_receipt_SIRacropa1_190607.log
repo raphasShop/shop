@@ -1,0 +1,184 @@
+INFO	[2019-06-07 01:26:03:14] <14842> START INIPHP receipt (V5036-141209)(OS:Linux4.8.0-46-generic,PHP:7.0.18-0ubuntu0.16.10.1)
+DEBUG	[2019-06-07 01:26:03:14] <14842> inipayhome:/var/www/acropass/shop/inicis
+DEBUG	[2019-06-07 01:26:03:14] <14842> debug:false
+DEBUG	[2019-06-07 01:26:03:14] <14842> type:receipt
+DEBUG	[2019-06-07 01:26:03:14] <14842> pgid:INIphpRECP
+DEBUG	[2019-06-07 01:26:03:14] <14842> paymethod:CASH
+DEBUG	[2019-06-07 01:26:03:14] <14842> currency:WON
+DEBUG	[2019-06-07 01:26:03:14] <14842> admin:1111
+DEBUG	[2019-06-07 01:26:03:14] <14842> mid:SIRacropa1
+DEBUG	[2019-06-07 01:26:03:14] <14842> goodname:여드름성피부적합패치트러블큐어
+DEBUG	[2019-06-07 01:26:03:14] <14842> cr_price:6820
+DEBUG	[2019-06-07 01:26:03:14] <14842> sup_price:6200
+DEBUG	[2019-06-07 01:26:03:14] <14842> tax:620
+DEBUG	[2019-06-07 01:26:03:14] <14842> srvc_price:0
+DEBUG	[2019-06-07 01:26:03:14] <14842> buyername:이지연
+DEBUG	[2019-06-07 01:26:03:14] <14842> buyeremail:qqwweerr0415@gmail.com
+DEBUG	[2019-06-07 01:26:03:14] <14842> buyertel:01041137420
+DEBUG	[2019-06-07 01:26:03:14] <14842> reg_num:01041137420
+DEBUG	[2019-06-07 01:26:03:14] <14842> useopt:0
+DEBUG	[2019-06-07 01:26:03:14] <14842> companynumber:
+INFO	[2019-06-07 01:26:03:15] <14842> Check Field OK
+INFO	[2019-06-07 01:26:03:15] <14842> Make TID OK INIphpRECPSIRacropa120190607012603155931
+INFO	[2019-06-07 01:26:03:15] <14842> PI PUB KEY LOAD OK []
+INFO	[2019-06-07 01:26:03:15] <14842> PG PUB KEY LOAD OK [30]
+INFO	[2019-06-07 01:26:03:15] <14842> MERCHANT PRIV KEY LOAD OK
+INFO	[2019-06-07 01:26:03:16] <14842> MERCHANT PUB KEY LOAD OK [0]
+DEBUG	[2019-06-07 01:26:03:16] <14842> MAKE ENCRYPT OK[<?xml version="1.0" encoding="UTF-8"?>
+<PaymentInfo>
+	  <Payment>
+	    <CASH>
+	      <CSHR_ApplPrice>6820</CSHR_ApplPrice>
+	      <CSHR_SupplyPrice>6200</CSHR_SupplyPrice>
+	      <CSHR_Tax>620</CSHR_Tax>
+	      <CSHR_ServicePrice/>
+	      <CSHR_Type>0</CSHR_Type>
+	      <CSHR_RegNum>01041137420</CSHR_RegNum>
+	      <CSHR_CompanyNum/></CASH></Payment></PaymentInfo>]
+INFO	[2019-06-07 01:26:03:17] <14842> MAKE BODY OK
+INFO	[2019-06-07 01:26:03:18] <14842> SIGN OK
+INFO	[2019-06-07 01:26:03:18] <14842> MAKE HEAD OK
+INFO	[2019-06-07 01:26:03:18] <14842> MSG_TO_PG:[0191500175D SHA1                   0                                      300200SIRacropa1                6820INIphpRECPSIRacropa120190607012603155931<?xml version="1.0" encoding="UTF-8"?>
+<INIpay>
+	  <GoodsInfo>
+	    <GoodsCnt>1</GoodsCnt>
+	    <MOID/>
+	    <Currency>WON</Currency>
+	    <Tax>620</Tax>
+	    <TaxFree/>
+	    <Goods>
+	      <SMID>SIRacropa1</SMID>
+	      <GoodsName urlencode="1">%BF%A9%B5%E5%B8%A7%BC%BA%C7%C7%BA%CE%C0%FB%C7%D5%C6%D0%C4%A1%C6%AE%B7%AF%BA%ED%C5%A5%BE%EE</GoodsName>
+	      <GoodsPrice>6820</GoodsPrice></Goods></GoodsInfo>
+	  <BuyerInfo>
+	    <BuyerName urlencode="1">%C0%CC%C1%F6%BF%AC</BuyerName>
+	    <BuyerTel>01041137420</BuyerTel>
+	    <BuyerEmail urlencode="1">qqwweerr0415%40gmail.com</BuyerEmail>
+	    <ParentEmail/>
+	    <RecvName/>
+	    <RecvTel/>
+	    <RecvMsg/>
+	    <RecvAddr/>
+	    <RecvPostNum/></BuyerInfo>
+	  <PaymentInfo>
+	    <Payment>
+	      <PayMethod>CASH</PayMethod>
+	      <JoinCard/>
+	      <JoinExpire/>
+	      <MailOrder/>
+	      <SessionKey>gJVE80GxcEJ/KgQivpppCWEm8de+UwZDnMNZ4R4BDweeiv/vdXKhQfqlGh6b3Uzi
+ssSyI7S1v5XQ32c9rW9YGSTh+EyddmZBB+k0bnBQB6nJ6x2kctmFNUNImJOrLTJf
+6BpI2TZ3gihi+z5ggAaS6JVLQivoWUa1xSVkXx1fgk3Gu/7uaxFYcA==
+</SessionKey>
+	      <Encrypted>SLdfPt1KZjZimvut1IqT9TY/j6OpuigXJJfpnFvVdXKdAhGRcKZTo4Y4X/ov2nFA
+HKUWjF/YrRToyHc72IR6TetuPJZmHFsYVcJbq1/N9xg5/uQ5dyNCEFizd2Ils8JW
+THudiQ1ATjO6+XYyK9kAPnOWY7S4yt6YJ2IzJDQ2kD5XW47lJVA6KMaHE+Lg/J8f
+uM6PRY5kC2p6hLLjmAsFMPJg/toMlo0mWLn6/duUEryPEPfniQ0ldfPTEVnUQz2m
+I4VE0j9KusJ4BNjtMl7V1dtCdlgahB5s1ZwaPlciJb2c6EdVaBa6ErqhcNLN1tmY
+BSGeEQfD5KBA4K+RVf4/SNoTH76tFOTPTKuqbuKM9r+2569sAUcL2aFPYsfx1tSj
++AnQJY1IcpeZLdLhtr4JadGm6uUd0rIn3SsbES/Ty9pxWs8rlmmgOu3wwOPllJR9
+6Jr01BkEIruCKm8ArGaTBv4KW0Kbk4Vx4S/fIV3/JfI=
+</Encrypted></Payment></PaymentInfo>
+	  <ReservedInfo>
+	    <MReserved1/>
+	    <MReserved2/>
+	    <MReserved3/></ReservedInfo>
+	  <ManageInfo>
+	    <Language/>
+	    <URL/>
+	    <TXVersion>5036B141209receiLinux     PHPchkfake   4.8.0-46-genericPHP:7.0.18-0ub</TXVersion>
+	    <TXUserID/>
+	    <TXRegNum/>
+	    <Ack>1</Ack></ManageInfo></INIpay>AJKeOBE4h24wz/+qALsDzD+bxEWYJ0qrpHh20wHY00fgzOrqAeDZhe1Q86VxNDF8
+6Bg6glUxkIw0Zh8tgM8V63Muf9VErukmLcIhLplebR6SlHWPW5wknT0z4B80kxod
+k8Xm6rBLVTVMpHPgdAgVat7awiahYQesE50hkzmVvK7W
+]
+INFO	[2019-06-07 01:26:03:18] <14842> DNS LOOKUP OK(203.238.37.3:203.238.37.3:34049) laptime:0
+INFO	[2019-06-07 01:26:03:103] <14842> SOCKET CONNECT OK
+INFO	[2019-06-07 01:26:03:104] <14842> SEND OK
+INFO	[2019-06-07 01:26:03:312] <14842> RECV OK
+INFO	[2019-06-07 01:26:03:312] <14842> MSG_FROM_PG:[0222100175D SHA1                   0                                      300210SIRacropa1                6820INIphpRECPSIRacropa120190607012603155931<?xml version="1.0" encoding="UTF-8"?>
+<INIpay>
+  <GoodsInfo>
+    <GoodsCnt>1</GoodsCnt>
+    <MOID urlencode="1"></MOID>
+    <Currency>WON</Currency>
+    <Goods no="1">
+      <SMID>SIRacropa1</SMID>
+      <GoodsName urlencode="1">%BF%A9%B5%E5%B8%A7%BC%BA%C7%C7%BA%CE%C0%FB%C7%D5%C6%D0%C4%A1%C6%AE%B7%AF%BA%ED%C5%A5%BE%EE</GoodsName>
+      <GoodsCntS>1</GoodsCntS>
+      <GoodsPrice>6820</GoodsPrice>
+    </Goods>
+  </GoodsInfo>
+  <PaymentInfo>
+    <Payment>
+      <SessionKey>AFbbZEy6+WuOhcCyaROcqh09AD/bQdefc51jTNNotrhP//dL2ReDopPqiiKEmBCf
+u6uU+8ovCt3339ufZpB7c4mAlfNLQ7kWoVRGS7GpdHa00MnzFbqpq3Cisbf1ZtS0
+oLDiTgdDsQ1wx6/j7xtTy3igTjQCJ2ho91R2bQMUx0v37qM7oCXbOBs=
+</SessionKey>
+      <Encrypted>DFZjVmf+o55Ed27qWQvZInKKfMAEyyhxSJCozromICfr4VWEskzb4V3PMfDaElcN
+UFSHDAktsGUwIQ2Q3fZg5rki8mgOl6/Nw1W/9VD7wic/RlGTRidZZG4r67W/2bHz
+xZwCFBtW/PsboH7LoKmQ/10jXXeeJw7tnb26o/+EWJINkV/+YvHouD5Eyb5LVYYW
+QARYGUKv3S59M1Ks4jYJoOsNa+o7WU147dIi6Cc31P1tO7x7NZ7RjpLQSAIL8AUs
+ptax0rvkOknn1Ic4/3o/GdTJXFZHZnp/QIfL58opTq+P12CH8cB2HOJxgkCnoVLl
+yoyZs1MxgvAfrKv6fGFcJ+MTJ/g6R6XtkQIyy69tOx3qWOA7HkEm1g3q5F0XVO3x
+j/2P+UVEDVzfDBtmuk+xv01wm49qIWPkWWDhF2RMT8BmWGHnalaHYs50DRsgvNB2
+FIEMrg8nFfV+aJnZc9av/slE0eUAvX3DDlMwxLfO/xYjbfAGXHZitxW1oYl9WKhH
+awlj/BwEzGLUwbeX1IJp5060Su4z7dZIw2yoEY1RdHbxk3pTOJB+9weEIwaf1k9J
+aoO3apziD8fJllsAcHJZDfF/rnLI2ONCnB1g7ozL9cPRbamTbtSCx3wGGwGfu06p
+OfW70JgVi1GJyPWTUysBtdBZI1upWetKJttozeyo9zfveGrOyeO+vlBvi/udkVCo
+t9xd4b391xZbRk0WMmOFo4snSnbiCe7GH0vz7ZyG6vZiU6W1kTyFlYuQv7+Xmfja
+zYUE+7pxwppkxWv/vMx7AqBaOfcqCJiQpfOZQQR8mZHtdsZAE+n6hb78bNyWwmnb
+</Encrypted>
+      <PayMethod>CASH</PayMethod>
+      <ResultCode>220000</ResultCode>
+      <ResultMsg urlencode="1">%C1%A4%BB%F3%C3%B3%B8%AE%B5%C7%BE%FA%BD%C0%B4%CF%B4%D9.</ResultMsg>
+    </Payment>
+  </PaymentInfo>
+  <ManageInfo>
+    <EventCode></EventCode>
+    <OrgCurrency></OrgCurrency>
+    <ExchangeRate></ExchangeRate>
+    <OrgPrice></OrgPrice>
+  </ManageInfo>
+  <ReservedInfo>
+    <MReserved1 urlencode="1"></MReserved1>
+    <MReserved2 urlencode="1"></MReserved2>
+    <MReserved3 urlencode="1"></MReserved3>
+    <PGReserved1 urlencode="1"></PGReserved1>
+    <PGReserved2 urlencode="1"></PGReserved2>
+    <PGReserved3 urlencode="1"></PGReserved3>
+  </ReservedInfo>
+</INIpay>
+SDQkOkTYGccQmM5qRzlnyy2O6Nf0EkEZpKhNv3IVf6L/10WTi8+wi2le+bA9Uli/
+knm0Xx+rJhUsqdTIOQeitaQAR2PLaaWaz1xSYnW6OoKZ6LlCy/o4R27Dmj7qh9cf
+nwC+wIdmnTeMgJ074t1O5WRXfJrWuUhghQuVghgWGxI=
+]
+INFO	[2019-06-07 01:26:03:312] <14842> VERIFY OK
+INFO	[2019-06-07 01:26:03:312] <14842> PARSE HEAD OK
+INFO	[2019-06-07 01:26:03:312] <14842> PARSE BODY OK
+INFO	[2019-06-07 01:26:03:313] <14842> DECRYPT OK
+DEBUG	[2019-06-07 01:26:03:313] <14842> DECRYPT MSG:[<?xml version="1.0" encoding="UTF-8"?>
+<PaymentInfo>
+  <Payment>
+    <EASYPAY/>
+    <CASH>
+      <CSHR_ApplPrice>6820</CSHR_ApplPrice>
+      <CSHR_SupplyPrice>6200</CSHR_SupplyPrice>
+      <CSHR_Tax>620</CSHR_Tax>
+      <CSHR_ServicePrice></CSHR_ServicePrice>
+      <CSHR_Type>0</CSHR_Type>
+      <CSHR_ApplDate>20190607</CSHR_ApplDate>
+      <CSHR_ApplTime>012603</CSHR_ApplTime>
+      <CSHR_ApplNum>265728370</CSHR_ApplNum>
+      <CSHR_ResultCode>220000</CSHR_ResultCode>
+      <CSHR_ResultMsg urlencode="1">%C1%A4%BB%F3%C3%B3%B8%AE%B5%C7%BE%FA%BD%C0%B4%CF%B4%D9.</CSHR_ResultMsg>
+    </CASH>
+  </Payment>
+</PaymentInfo>]
+INFO	[2019-06-07 01:26:03:313] <14842> DECRYPT PARSE OK
+INFO	[2019-06-07 01:26:03:313] <14842> WAIT ACK INVOKING
+DEBUG	[2019-06-07 01:26:03:313] <14842> MAKE HEAD OK
+INFO	[2019-06-07 01:26:03:396] <14842> SUCCESS ACK INVOKING
+INFO	[2019-06-07 01:26:03:396] <14842> END receipt 정상처리되었습니다. Laptime:[0.382sec]
+INFO	[2019-06-07 01:26:03:396] <14842> ===============================================================
